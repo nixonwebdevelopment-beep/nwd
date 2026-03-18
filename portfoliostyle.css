@@ -9,7 +9,7 @@ html {
   font-family: "Alumni Sans SC", sans-serif;
 }
 .section1 {
-  background-image: url( group1.2.jpeg);
+  background-image: url("group1.2.jpeg");
   background-size: cover;
   background-attachment: fixed;
   line-height: 5vw;
