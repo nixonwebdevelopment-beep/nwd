@@ -82,7 +82,7 @@ html {
 
 
 .parallax {
-  background-image: url( group1.1.jpeg);
+  background-image: url("group1.1.jpeg");
   min-height: 29vw;
   background-attachment: fixed;
   background-size: cover;
