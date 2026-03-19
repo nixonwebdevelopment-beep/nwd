@@ -9,29 +9,30 @@ html {
   font-family: "Alumni Sans SC", sans-serif;
 }
 .section1 {
-  background-image: url("group1.2.jpeg");
+  background-image: url(../media/group1.2.jpeg);
   background-size: cover;
   background-attachment: fixed;
   line-height: 5vw;
 }
 
-
 #section1p {
-	text-align: left;
-	margin-left: 4vw;	
-	line-height: 1vw;
+  text-align: left;
+  margin-left: 4vw;  
+  line-height: 1vw;
 }
-
 
 .section1button {
   font-size: 2.2vw;
-  xbackground-image: url("buttonflower.jfif");
   background-size: cover;
   background-color: black;
   color: white;
   cursor: pointer;
   text-align: center;
+  border: none;
+}
 
+.section1button:hover {
+  text-decoration: underline;
 }
 
 .p2 span {
@@ -39,20 +40,57 @@ html {
   text-align: left;
 }
 
-
-
-.section1button:hover {
-  text-decoration: underline;
+.section2 {
+  background-color: black;
+  padding-top: 2vw;
+  padding-bottom: 8vw;
+  line-height: 4vw;
 }
 
+/* inline style replaced with class */
+.section2-img {
+  float: right;
+  margin-right: 4vw;
+  width: 25vw;
+}
+
+.section3 {
+  background-image: url(../media/background3.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 4vw;
+}
+.section3 img.fade-in-image {
+  opacity: 1 !important;
+  transition: none !important;
+}
+.section3 img {
+  margin-right: 0;
+}
+
+.section4 {
+  background-image: url(../media/socialmediabackground.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  line-height: 4vw;
+}
+
+#section4p {
+  text-align: left;
+  margin-left: 4vw;
+}
+
+/* ── Contact form ── */
 .contact-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 4vw;
-  max-width: 40%;
+  max-width: 500px;
 }
- 
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -60,7 +98,7 @@ html {
   width: 100%;
   margin-top: 1rem;
 }
- 
+
 .form-input {
   padding: 0.8rem;
   background: #1a1a1a;
@@ -70,21 +108,21 @@ html {
   font-size: 1.1vw;
   width: 100%;
 }
- 
+
 .form-input::placeholder {
   color: #888;
 }
- 
+
 .form-input:focus {
   outline: none;
   border-color: #888;
 }
- 
+
 .form-textarea {
   resize: vertical;
   min-height: 8rem;
 }
- 
+
 .form-submit {
   padding: 0.9rem;
   background: white;
@@ -98,11 +136,11 @@ html {
   cursor: pointer;
   width: 100%;
 }
- 
+
 .form-submit:hover {
   background: #ccc;
 }
- 
+
 .contact-alt {
   margin-top: 2rem;
   font-size: 1vw;
@@ -110,47 +148,8 @@ html {
   text-align: left;
   line-height: 2rem;
 }
-.section2 {
-  background-color: black;
-  padding-top: 2vw;
-  padding-bottom: 8vw;
-  line-height: 4vw;
-}
 
-.section3 {
-  background-image: url("background3.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 4vw;
-}
-.section3 img.fade-in-image {
-  opacity: 1 !important;
-  transition: none !important;
-}
-.section3 img {
-  margin-right: 0;
-}
-.section4 {
-  background-image: url(socialmediabackground.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 6vw;
-  padding-bottom: 6vw;
-  line-height: 4vw
-}
-
-#section4p {
-	text-align: left;
-	margin-left: 4vw;
-}
-
-
-.section2-img {
-  float: right;
-  margin-right: 4vw;
-  width: 25vw;
-}
-
+/* ── Bio images ── */
 .bio-img {
   width: 19.8vw;
   height: 26vw;
@@ -163,15 +162,17 @@ html {
 .bio-img-left {
   float: left;
 }
+
+/* ── Layout ── */
 .parallax {
-  background-image: url("group1.1.jpeg");
+  background-image: url(../media/group1.1.jpeg);
   min-height: 29vw;
   background-attachment: fixed;
   background-size: cover;
   padding-top: 14vw;
   padding-bottom: 18vw;
-  
 }
+
 .gallery {
   display: flex;
   justify-content: space-between;
@@ -188,7 +189,6 @@ html {
   border-radius: 0.26vw;
   border: 0.52vw solid black;
 }
-
 .gallery .item h3 {
   max-width: 41.6vw;
   text-align: center;
@@ -203,48 +203,37 @@ html {
   padding-top: 6vw;
   padding-bottom: 6vw;
 }
-
 .project.reverse {
   flex-direction: row-reverse;
 }
-
 .project.reverse .project-text {
   text-align: right;
 }
-
 .project.reverse .project-image {
   justify-content: flex-start;
 }
-
 .project-text {
   width: 40%;
   position: sticky;
   top: 20%;
   display: flex;
 }
-
 .project-image {
   width: 60%;
   display: flex;
   justify-content: flex-end;
 }
 
-
 @media (max-width: 1024px) {
-  .gallery .item {
-    flex: 1 1 calc(33.33% - 0.5vw);
-  }
+  .gallery .item { flex: 1 1 calc(33.33% - 0.5vw); }
 }
 @media (max-width: 768px) {
-  .gallery .item {
-    flex: 1 1 calc(50% - 0.5vw);
-  }
+  .gallery .item { flex: 1 1 calc(50% - 0.5vw); }
 }
 @media (max-width: 480px) {
-  .gallery .item {
-    flex: 1 1 100%;
-  }
+  .gallery .item { flex: 1 1 100%; }
 }
+
 img {
   display: block;
   margin-left: auto;
@@ -252,6 +241,7 @@ img {
   border: 0.52vw solid black;
   opacity: 1;
 }
+
 header {
   background: black;
   color: white;
@@ -277,10 +267,9 @@ header h1 {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
 @keyframes myAnimation {
-  0%   { left:0px; top:0px;}
-  100% { left:100%; top:0px;}
+  0%   { left: 0px; top: 0px; }
+  100% { left: 100%; top: 0px; }
 }
 
 footer {
@@ -297,6 +286,7 @@ footer h1 {
   margin-left: 1.04vw;
   margin-top: -0.94vw;
 }
+
 li {
   text-align: right;
   margin-right: 2.6vw;
@@ -325,17 +315,15 @@ h3 {
   color: white;
   line-height: 2vw;
 }
-
 .h3 {
   font-size: 1.56vw;
   text-align: right;
   width: 50%;
   font-family: "Alumni Sans SC", sans-serif;
   color: white;
-  margin-left: auto;   
-  margin-right: 7.3vw; 
+  margin-left: auto;
+  margin-right: 7.3vw;
 }
-
 p {
   font-size: 2vw;
   text-align: center;
@@ -354,8 +342,6 @@ p {
   margin-left: 4vw;
   margin-right: 4vw;
 }
-
-
 .p3 {
   font-size: 4.43vw;
   text-align: center;
@@ -363,16 +349,14 @@ p {
   color: white;
   font-weight: bold;
 }
-
 .p4 {
-	font-size: 2vw;
+  font-size: 2vw;
 }
-
 .scrolling-p {
-	white-space: nowrap;
-    margin-left: -100%;
-	font-size: 1.5vw;
-	word-spacing: 10vw;
+  white-space: nowrap;
+  margin-left: -100%;
+  font-size: 1.5vw;
+  word-spacing: 10vw;
 }
 .under-image-p {
   font-size: 7vw;
@@ -385,7 +369,6 @@ p {
 }
 h2 {
   font-size: 2.6vw;
-  text-align: center;
   font-family: "Alumni Sans SC", sans-serif;
   color: white;
   margin-bottom: 1vw;
@@ -395,18 +378,17 @@ h2 {
 .h2 {
   font-size: 1.56vw;
   text-align: left;
-  margin-left: 2vw;
   width: 50%;
   font-family: "Alumni Sans SC", sans-serif;
   color: white;
   margin-left: 7.3vw;
   margin-right: 7.3vw;
 }
+
 .animate-on-scroll span {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
-
 .animate-on-scroll.active span {
   opacity: 1;
 }
@@ -414,15 +396,14 @@ h2 {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
-
 .fade-in-image.visible {
   opacity: 1;
 }
+
 .projects-heading {
   padding-top: 2vw;
   padding-bottom: 2vw;
 }
-
 .life-section-top {
   padding-top: 3vw;
 }
