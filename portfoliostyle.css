@@ -5,7 +5,6 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
@@ -17,9 +16,10 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
-  border: 3px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.52vw solid black;
+  opacity: 1;
 }
 
 a {
@@ -28,66 +28,81 @@ a {
 }
 
 h1 {
-  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-size: 1.56vw;
   color: white;
+  font-family: "Alumni Sans SC", sans-serif;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 3vw, 2.6rem);
+  font-size: 2.6vw;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1vw;
   text-align: left;
-  margin-left: 5%;
+  margin-left: 7vw;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: 4vw;
   text-align: center;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
+  line-height: 2vw;
+}
+
+h5 {
+  font-size: 0.52vw;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: 2vw;
   text-align: center;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
 }
 
 .h2 {
-  font-size: clamp(0.85rem, 1.6vw, 1.4rem);
+  font-size: 1.56vw;
   text-align: left;
+  width: 50%;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
-  line-height: 1.7;
+  margin-left: 7.3vw;
+  margin-right: 7.3vw;
 }
 
 .h3 {
-  font-size: clamp(0.85rem, 1.6vw, 1.4rem);
+  font-size: 1.56vw;
   text-align: right;
+  width: 50%;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
-  line-height: 1.7;
+  margin-left: auto;
+  margin-right: 7.3vw;
 }
 
 header {
   background: black;
   color: white;
+  padding: 2.4vw 0;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 200;
-  padding: 0.6rem 0 0;
+  z-index: 100;
+  height: 0.01vw;
+  margin-left: -0.42vw;
+}
+
+header h1 {
+  margin-left: 1.04vw;
+  margin-top: -0.94vw;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
-  min-height: 44px;
-}
-
-.header-inner h1 {
-  margin: 0;
-  font-size: clamp(0.9rem, 1.8vw, 1.4rem);
-  white-space: nowrap;
+  padding: 0 1vw;
 }
 
 nav { position: relative; }
@@ -101,7 +116,7 @@ nav { position: relative; }
 }
 
 .nav-links a {
-  font-size: clamp(0.75rem, 1.3vw, 1.1rem);
+  font-size: 1.3vw;
   letter-spacing: 0.05em;
   transition: opacity 0.2s;
 }
@@ -121,178 +136,226 @@ nav { position: relative; }
 .headerp {
   width: 100%;
   overflow: hidden;
-  padding: 0.15rem 0;
+  margin-top: -1.8vw;
+  position: relative;
+  animation-name: myAnimation;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myAnimation {
+  0%   { left: 0px; top: 0px; }
+  100% { left: 100%; top: 0px; }
 }
 
 .scrolling-p {
   white-space: nowrap;
-  display: inline-block;
-  font-size: clamp(0.65rem, 1.3vw, 1.1rem);
-  word-spacing: 1.5rem;
-  margin: 0;
-  animation: ticker 60s linear infinite;
+  margin-left: -100%;
+  font-size: 1.5vw;
+  word-spacing: 10vw;
 }
 
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+li {
+  text-align: right;
+  margin-right: 2.6vw;
+  list-style: none;
+  font-family: "Alumni Sans SC", sans-serif;
+  font-size: 1.3vw;
+  margin-top: -2.8vw;
+  word-spacing: 1.04vw;
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 0.78vw 0;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  height: 0.05vw;
+}
+
+footer h1 {
+  text-align: center;
+  margin-left: 1.04vw;
+  margin-top: -0.94vw;
 }
 
 .section1 {
   background-image: url(../media/group1.2.jpeg);
   background-size: cover;
   background-attachment: fixed;
-  margin-top: 58px;
+  line-height: 5vw;
 }
 
 .parallax {
   background-image: url(../media/group1.1.jpeg);
-  min-height: 45vw;
+  min-height: 29vw;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  padding: 14vw 4% 10vw;
+  padding-top: 14vw;
+  padding-bottom: 18vw;
 }
 
 #section1p {
   text-align: left;
-  font-size: clamp(2.5rem, 7vw, 8rem);
-  line-height: 1;
-  margin: 0 0 1rem 0;
-  color: white;
+  margin-left: 4vw;
+  line-height: 1vw;
+  font-size: 7vw;
 }
 
 .p2 {
-  font-size: clamp(1rem, 1.6vw, 1.8rem);
+  font-size: 1.56vw;
+  text-align: center;
+  margin-top: -3.4vw;
   color: white;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 4% 0;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.p2 span {
+  width: 40%;
+  text-align: left;
 }
 
 .section1button {
-  font-size: clamp(0.9rem, 2vw, 1.6rem);
+  font-size: 2.2vw;
+  background-size: cover;
   background-color: black;
   color: white;
   cursor: pointer;
+  text-align: center;
   border: none;
-  padding: 0.3em 0.8em;
-  margin-top: 0.5rem;
 }
-.section1button:hover { text-decoration: underline; }
+
+.section1button:hover {
+  text-decoration: underline;
+}
 
 .section2 {
   background-color: black;
-  padding: 3rem 5%;
-}
-
-.section2-inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
+  padding-top: 2vw;
+  padding-bottom: 8vw;
+  line-height: 4vw;
 }
 
 .section2-img {
-  width: clamp(120px, 25vw, 300px);
-  height: auto;
   float: right;
-  margin: 0 0 1rem 2rem;
+  margin-right: 4vw;
+  width: 25vw;
+}
+
+.section2-inner {
+  display: block;
 }
 
 .bio-block {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: flex-start;
-  margin-bottom: 3rem;
-  width: 100%;
+  display: block;
+  margin-bottom: 2vw;
 }
 
 .bio-img {
-  width: clamp(100px, 20vw, 260px);
-  height: auto;
-  flex-shrink: 0;
+  width: 19.8vw;
+  height: 26vw;
 }
 
-.bio-img-right { float: right; margin-left: 2rem; margin-bottom: 1rem; }
-.bio-img-left  { float: left;  margin-right: 2rem; margin-bottom: 1rem; }
+.bio-img-right { float: right; }
+.bio-img-left  { float: left; }
 
 .section3 {
   background-image: url(../media/background3.jpg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  padding: 4% 0;
+  padding-top: 4vw;
 }
 
-.projects-heading { padding: 2% 4%; }
+.section3 img.fade-in-image {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.section3 img {
+  margin-right: 0;
+}
+
+.projects-heading {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
 
 .p3 {
-  font-size: clamp(1.5rem, 4.4vw, 5rem);
+  font-size: 4.43vw;
   text-align: center;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
   font-weight: bold;
 }
 
 .project {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  padding: 4% 4%;
-  gap: 2rem;
+  padding-top: 6vw;
+  padding-bottom: 6vw;
 }
 
 .project.reverse { flex-direction: row-reverse; }
 .project.reverse .project-text { text-align: right; }
+.project.reverse .project-image { justify-content: flex-start; }
 
 .project-text {
-  flex: 1 1 240px;
+  width: 40%;
   position: sticky;
-  top: 70px;
+  top: 20%;
+  display: flex;
 }
 
 .project-image {
-  flex: 2 1 300px;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
 }
 
 .project-img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
+  width: 60vw;
+  height: 160vw;
 }
 
 .under-image-p {
-  font-size: clamp(1.2rem, 4vw, 5rem);
+  font-size: 7vw;
+  text-align: left;
+  font-family: "Alumni Sans SC", sans-serif;
   color: white;
   font-weight: bold;
-  line-height: 1.15;
+  margin-top: -3.65vw;
+  margin-left: 3vw;
 }
 
 .section4 {
   background-image: url(../media/socialmediabackground.jpg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  padding: 6% 5%;
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  line-height: 4vw;
 }
 
 .contact-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 560px;
-  width: 100%;
+  margin-left: 4vw;
+  max-width: 40%;
 }
 
 #section4p {
   text-align: left;
-  margin: 0 0 0.5rem 0;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin-left: 4vw;
+  font-size: 2vw;
 }
 
 .contact-form {
@@ -309,7 +372,7 @@ nav { position: relative; }
   border: 1px solid #444;
   color: white;
   font-family: "Alumni Sans SC", sans-serif;
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-size: 1.1vw;
   width: 100%;
 }
 
@@ -324,36 +387,50 @@ nav { position: relative; }
   border: none;
   font-weight: 700;
   font-family: "Alumni Sans SC", sans-serif;
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-size: 1.2vw;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   cursor: pointer;
   width: 100%;
-  transition: background 0.2s;
 }
+
 .form-submit:hover { background: #ccc; }
 
 .contact-alt {
   margin-top: 2rem;
-  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  font-size: 1vw;
   opacity: 0.6;
-  line-height: 2;
   text-align: left;
+  line-height: 2rem;
 }
 
-footer {
-  background: black;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  width: 100%;
-  z-index: 100;
+.p4 { font-size: 2vw; }
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-footer h1 {
+.gallery .item {
+  flex: 1 1 calc(50% - 0.5vw);
+  margin-bottom: 0.5vw;
   text-align: center;
-  margin: 0;
-  padding: 0.3rem 0;
-  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+.gallery .item img {
+  width: 50%;
+  height: auto;
+  border-radius: 0.26vw;
+  border: 0.52vw solid black;
+}
+
+.gallery .item h3 {
+  max-width: 41.6vw;
+  text-align: center;
+  margin-top: 0.52vw;
+  font-size: 1.04vw;
+  margin-left: 3.9vw;
 }
 
 .animate-on-scroll span {
@@ -368,11 +445,6 @@ footer h1 {
 }
 .fade-in-image.visible { opacity: 1; }
 
-.section3 img.fade-in-image {
-  opacity: 1 !important;
-  transition: none !important;
-}
-
 @media (max-width: 1024px) {
   .section1,
   .parallax,
@@ -381,20 +453,23 @@ footer h1 {
     background-attachment: scroll;
   }
 
-  .parallax { min-height: 60vw; padding: 20vw 5% 14vw; }
+  .parallax { min-height: 50vw; padding-top: 18vw; padding-bottom: 20vw; }
 
-  .section2-img { float: none; margin: 0 auto 1.5rem; width: clamp(140px, 40%, 280px); }
+  .bio-img { width: 30vw; height: auto; }
+  .bio-img-right { float: none; display: block; margin: 0 auto 2vw; }
+  .bio-img-left  { float: none; display: block; margin: 0 auto 2vw; }
 
-  .bio-img-right,
-  .bio-img-left  { float: none; margin: 0 auto 1rem; }
-  .bio-block { flex-direction: column; align-items: center; text-align: center; }
-  .h3 { text-align: center; margin: 0; width: 100%; }
-  .h2 { width: 100%; margin: 0; }
+  .h3 { text-align: center; width: 80%; margin: 0 auto; }
 
-  .project { flex-direction: column; }
-  .project.reverse { flex-direction: column; }
-  .project-text { position: static; width: 100%; }
+  .project { flex-wrap: wrap; }
+  .project-text { width: 100%; position: static; }
   .project-image { width: 100%; justify-content: center; }
+  .project-img { width: 80vw; height: auto; }
+
+  .contact-wrapper { max-width: 70%; }
+  .form-input { font-size: 1.8vw; }
+  .form-submit { font-size: 1.8vw; }
+  .contact-alt { font-size: 1.6vw; }
 }
 
 @media (max-width: 768px) {
@@ -415,28 +490,58 @@ footer h1 {
   }
   .nav-links.open { display: flex; }
 
-  .parallax { min-height: 75vw; padding: 28vw 5% 16vw; }
+  header { height: auto; padding: 3vw 0 2vw; }
+  header h1 { font-size: 3.5vw; margin-top: 0; }
+  .header-inner { padding: 0 3vw; }
+  .nav-links a { font-size: 3.5vw; }
+  .scrolling-p { font-size: 3vw; word-spacing: 5vw; margin-left: 0; }
+  .headerp { margin-top: 0; animation: none; }
 
-  .p2 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
+  .parallax { min-height: 80vw; padding-top: 25vw; padding-bottom: 20vw; }
+  #section1p { font-size: 10vw; line-height: normal; }
 
-  .section2-img { width: 65%; }
+  .p2 { flex-direction: column; align-items: flex-start; font-size: 3.5vw; margin-top: 2vw; }
+  .p2 span { width: 100%; }
+  .section1button { font-size: 4vw; }
 
-  .contact-wrapper { max-width: 100%; }
+  .section2 { line-height: normal; padding: 4vw; }
+  h2 { font-size: 5vw; margin-left: 4vw; }
+  .h2 { font-size: 3.5vw; width: 90%; margin: 0 auto; line-height: 1.6; }
+  .h3 { font-size: 3.5vw; width: 90%; line-height: 1.6; text-align: center; }
 
-  .under-image-p { font-size: clamp(1rem, 5vw, 2.5rem); }
+  .section2-img { float: none; display: block; width: 60vw; margin: 0 auto 4vw; }
+  .bio-img { width: 50vw; height: auto; }
+
+  .p3 { font-size: 7vw; }
+  .under-image-p { font-size: 9vw; margin-left: 4vw; margin-top: 0; }
+  .project-img { width: 90vw; height: auto; }
+  .project { padding-top: 8vw; padding-bottom: 8vw; }
+
+  .section4 { line-height: normal; padding: 8vw 4vw; }
+  #section4p { font-size: 4.5vw; margin-left: 0; }
+  .contact-wrapper { max-width: 100%; margin-left: 0; }
+  .form-input { font-size: 3.5vw; }
+  .form-submit { font-size: 3.5vw; }
+  .contact-alt { font-size: 3vw; line-height: 1.8; }
+
+  footer h1 { font-size: 3.5vw; margin: 0; padding: 1vw 0; }
 }
 
 @media (max-width: 480px) {
-  .parallax { padding: 32vw 5% 20vw; }
-  #section1p { font-size: clamp(2rem, 10vw, 3rem); }
-  .p3 { font-size: clamp(1.1rem, 5.5vw, 2rem); }
-  .project { padding: 8% 4%; }
-  .form-input, .form-submit { font-size: 1rem; }
-  .bio-img { width: 75%; }
-  .section2 { padding: 2rem 4%; }
-  .section2-img { width: 80%; }
+  #section1p { font-size: 12vw; }
+  .p2 { font-size: 4.5vw; }
+  .section1button { font-size: 5vw; }
+  h2 { font-size: 6vw; }
+  .h2, .h3 { font-size: 4vw; }
+  .p3 { font-size: 8vw; }
+  .under-image-p { font-size: 10vw; }
+  .bio-img { width: 65vw; }
+  .section2-img { width: 70vw; }
+  .project-img { width: 95vw; height: auto; }
+  #section4p { font-size: 5.5vw; }
+  .form-input { font-size: 4vw; }
+  .form-submit { font-size: 4vw; }
+  .contact-alt { font-size: 3.5vw; }
+  header h1 { font-size: 4.5vw; }
+  footer h1 { font-size: 4.5vw; }
 }
