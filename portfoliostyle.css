@@ -22,9 +22,15 @@ img {
   opacity: 1;
 }
 
+
+
 a {
   text-decoration: none;
   color: white;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 h1 {
@@ -87,8 +93,9 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;       
   z-index: 100;
-  margin-left: -0.42vw;
+  margin: 0;      
   padding: 0;
 }
 
@@ -105,7 +112,9 @@ header h1 {
   padding: 0.6vw 1vw;
 }
 
-nav { position: relative; }
+nav { 
+  position: relative;
+}
 
 .nav-links {
   display: flex;
@@ -169,8 +178,71 @@ li {
   word-spacing: 1.04vw;
 }
 
+#li2 {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 2vw;
+  margin-bottom: 1vw;
+  word-spacing: 0.5vw;
+}
+
+#li2:hover {
+	text-decoration: underline;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: white;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 9999;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-inner {
+  width: 70vw;
+  height: 85vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 3vw;
+  position: relative;
+}
+
+.overlay-inner img {
+  width: 100%;
+  display: block;
+  border: none;
+  margin: 0;
+}
+
+.overlay-close:hover { background: #ccc; }
+
+.websitebox {
+  cursor: pointer;
+}
+
 footer {
-  background: black;
   color: white;
   padding: 0.78vw 0;
   width: 100%;
@@ -185,40 +257,48 @@ footer h1 {
   margin-top: -0.94vw;
 }
 
+@keyframes subtleZoom {
+  0%   { background-size: 110%; background-position: 40% 40%; }
+  50%  { background-size: 115%; background-position: 55% 50%; }
+  100% { background-size: 110%; background-position: 50% 60%; }
+}
+
+@keyframes bounce {
+	0% {transform: scale(1) }
+	50% {transform: scale(1.01) }
+    100% {transform: scale(1) }
+}
+
 .section1 {
-  background-image: url(group1.2.jpeg);
-  background-size: cover;
-  background-attachment: fixed;
   line-height: 5vw;
+  align-items: center;
+}
+
+.section1text {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
 }
 
 .parallax {
-  background-image: url(group1.1.jpeg);
-  min-height: 29vw;
+  background-image: url(background14.jpg);
+  min-height: 100vh;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 14vw;
-  padding-bottom: 18vw;
+  animation: subtleZoom 32s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  padding: 0 4vw;
 }
 
-#section1p {
-  text-align: left;
-  margin-left: 4vw;
-  line-height: 1vw;
-  font-size: 7vw;
-}
 
 .p2 {
-  font-size: 3vw;
-  text-align: center;
-  margin-top: -3.4vw;
+  font-size: 10vw;
   color: white;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 4vw;
-  margin-right: 4vw;
+  line-height: 1;
+  white-space: nowrap;
+  animation: bounce 6s ease-in-out infinite alternate;
 }
 
 .p2 span {
@@ -226,33 +306,37 @@ footer h1 {
   text-align: left;
 }
 
-.section1button {
-  font-size: 2.2vw;
-  background-size: cover;
-  background-color: black;
+.p4 {
+  font-size: 4vw;
   color: white;
-  cursor: pointer;
-  text-align: center;
-  border: none;
-  text-decoration: underline;
-  border-radius: 10%;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  animation: bounce 6s ease-in-out infinite alternate;
+  margin-left: 4vw;
+}
+
+
+.p4 a:hover {
+  transform: translateY(0);
+  box-shadow: 0 10px 10px rgba(255,255,255,0.1);
 }
 
 .section2 {
   background-color: black;
   padding-top: 2vw;
-  padding-bottom: 8vw;
-  line-height: 4vw;
+  padding-bottom: 2vw;
+  line-height: 3vw;
+  display: block;
 }
 
 .section2-img {
-  float: right;
-  margin-right: 4vw;
-  width: 25vw;
+  width: 20vw;
+  align-items: center;
 }
 
 .section2-inner {
-  display: block;
+  display: flex;
 }
 
 .bio-block {
@@ -265,11 +349,11 @@ footer h1 {
   height: 26vw;
 }
 
-.bio-img-right { float: right; }
-.bio-img-left  { float: left; }
+.bio-img-right { float: right; margin-right: 7vw; }
+.bio-img-left  { float: left; margin-left: 7vw;}
 
 .section3 {
-  background-image: url(background3.jpg);
+  background-image: url(background14.jpg);
   background-attachment: fixed;
   background-size: cover;
   padding-top: 4vw;
@@ -281,8 +365,50 @@ footer h1 {
 }
 
 .section3 img {
-  margin-right: 0;
+  margin-right: 1vw;
 }
+
+
+.websitebox {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2vw;
+  aspect-ratio: 12 / 9;
+}
+
+.websitebox img {
+  width: 100%;
+  display: block;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.websitebox:hover img {
+  filter: blur(4px) brightness(0.6);
+  transform: scale(1.05);
+}
+
+.websitebox-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Alumni Sans SC", sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  text-align: center;
+  padding: 1vw;
+}
+
+.websitebox:hover .websitebox-label {
+  opacity: 1;
+}
+
+
 
 .projects-heading {
   padding-top: 2vw;
@@ -298,27 +424,23 @@ footer h1 {
 }
 
 .project {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 6vw;
-  padding-bottom: 6vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  padding: 6vw 4vw;
 }
 
-.project.reverse { flex-direction: row-reverse; }
-.project.reverse .project-text { text-align: right; }
-.project.reverse .project-image { justify-content: flex-start; }
 
 .project-text {
-  width: 40%;
-  position: sticky;
   top: 20%;
   display: flex;
 }
 
-.project-image {
-  width: 60%;
-  display: flex;
-  justify-content: flex-end;
+.project-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3vw;
 }
 
 .project-img {
@@ -327,12 +449,11 @@ footer h1 {
 }
 
 .under-image-p {
-  font-size: 7vw;
+  font-size: 4vw;
   text-align: left;
   font-family: "Alumni Sans SC", sans-serif;
   color: white;
   font-weight: bold;
-  margin-top: -3.65vw;
   margin-left: 3vw;
 }
 
@@ -408,7 +529,7 @@ footer h1 {
   line-height: 2rem;
 }
 
-.p4 { font-size: 2vw; }
+
 
 .gallery {
   display: flex;
@@ -515,7 +636,6 @@ footer h1 {
     z-index: 300;
   }
   .nav-links.open { display: flex; }
-
   header { height: auto; padding: 3vw 0 2vw; }
   header h1 { font-size: 3.5vw; margin-top: 0; }
   .header-inner { padding: 0 3vw; }
@@ -524,18 +644,16 @@ footer h1 {
   .headerp { margin-top: 0; }
 
   .parallax { min-height: 80vw; padding-top: 25vw; padding-bottom: 20vw; }
-  #section1p { font-size: 10vw; line-height: normal; }
 
-  .p2 { flex-direction: column; align-items: flex-start; font-size: 3.5vw; margin-top: 2vw; }
+  .p2 { flex-direction: column; align-items: flex-start; font-size: 8vw; margin-top: 2vw; margin-left: 3vw !important; text-align: center;}
   .p2 span { width: 100%; }
-  .section1button { font-size: 4vw; }
 
   .section2 { line-height: normal; padding: 4vw; }
   h2 { font-size: 5vw; margin-left: 4vw; }
   .h2 { font-size: 3.5vw; width: 90%; margin: 0 auto; line-height: 1.6; }
   .h3 { font-size: 3.5vw; width: 90%; line-height: 1.6; text-align: center; }
 
-  .section2-img { float: none; display: block; width: 60vw; margin: 0 auto 4vw; }
+  .section2-img { float: none; display: block; width: 20vw; margin: 0 auto 4vw; }
   .bio-img { width: 50vw; height: auto; }
 
   .p3 { font-size: 7vw; }
@@ -554,15 +672,14 @@ footer h1 {
 }
 
 @media (max-width: 480px) {
-  #section1p { font-size: 12vw; }
-  .p2 { font-size: 4.5vw; }
+  .p2 { font-size: 7vw; margin-left: 3vw;}
   .section1button { font-size: 5vw; }
   h2 { font-size: 6vw; }
   .h2, .h3 { font-size: 4vw; }
   .p3 { font-size: 8vw; }
   .under-image-p { font-size: 10vw; }
   .bio-img { width: 65vw; }
-  .section2-img { width: 70vw; }
+  .section2-img { width: 20vw; }
   .project-img { width: 95vw; height: auto; }
   #section4p { font-size: 5.5vw; }
   .form-input { font-size: 4vw; }
