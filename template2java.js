@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   // ── Mobile nav toggle ────────────────────────────────────────
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -14,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ── Scroll progress bar ──────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+
   // ── General fade-in observer ─────────────────────────────────
   const fadeElements = document.querySelectorAll(".fade-in-image");
   const fadeObserver = new IntersectionObserver((entries) => {
@@ -27,45 +36,48 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { threshold: 0.3 });
   fadeElements.forEach(el => fadeObserver.observe(el));
 
+  // ── Image overlay on click ───────────────────────────────────
+  document.querySelectorAll('.websitebox').forEach(box => {
+    box.addEventListener('click', () => {
+      const img = box.querySelector('img');
+      if (!img) return;
+      document.getElementById('overlay-img').src = img.src;
+      document.getElementById('overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  window.closeOverlay = function() {
+    document.getElementById('overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.getElementById('overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeOverlay();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeOverlay();
+  });
+
   // ── Heading slide-in animation ───────────────────────────────
   let timers = [];
-  let splitDone = false;
 
   function clearTimers() {
     timers.forEach(t => clearTimeout(t));
     timers = [];
   }
 
-  function splitHeading() {
-    if (splitDone) return;
-    const heading = document.querySelector('#section1p .animate-on-scroll');
-    if (!heading) return;
-    const text = heading.textContent.trim();
-    heading.innerHTML = text
-      .split('')
-      .map(char =>
-        char === ' '
-          ? `<span class="letter">&nbsp;</span>`
-          : `<span class="letter">${char}</span>`
-      )
-      .join('');
-    heading.classList.remove('animate-on-scroll');
-    splitDone = true;
-  }
-
   function resetAll() {
     clearTimers();
-    document.querySelectorAll('.letter').forEach(l => l.classList.remove('visible'));
     document.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.remove('visible'));
   }
 
   function playAnimation() {
     clearTimers();
-    requestAnimationFrame(() => {
-      document.querySelectorAll('.letter').forEach(l => l.classList.add('visible'));
+    document.querySelectorAll('.p2 .animate-on-scroll, .p4 .animate-on-scroll').forEach((el, i) => {
+      timers.push(setTimeout(() => el.classList.add('visible'), i * 300));
     });
-    const p2Span = document.querySelector('.p2 .animate-on-scroll');
-    if (p2Span) timers.push(setTimeout(() => p2Span.classList.add('visible'), 950));
   }
 
   const parallaxObserver = new IntersectionObserver((entries) => {
@@ -78,10 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.2 });
 
-  splitHeading();
   const parallax = document.querySelector('.parallax');
   if (parallax) parallaxObserver.observe(parallax);
+
 });
-
-
-
