@@ -14,6 +14,18 @@ body {
   overflow-x: hidden;
 }
 
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+
 img {
   display: block;
   margin-left: auto;
@@ -30,7 +42,8 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+  transform: translateY(0);
+  box-shadow: 0 10px 10px rgba(255,255,255,0.1);
 }
 
 h1 {
@@ -152,21 +165,26 @@ nav {
   width: 100%;
   overflow: hidden;
   padding-bottom: 0.4vw;
-  white-space: nowrap;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  width: max-content;
+  animation: myAnimation 120s linear infinite;
 }
 
 .scrolling-p {
   white-space: nowrap;
   font-size: 1.5vw;
-  word-spacing: 10vw;
+  word-spacing: 5vw;
   margin: 0;
-  display: inline-block;
-  animation: myAnimation 120s linear infinite;
+  padding-right: 4vw;
+  flex-shrink: 0;
 }
 
 @keyframes myAnimation {
-  0%   { transform: translateX(calc(100vw - 100%)); }
-  100% { transform: translateX(200vw); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 li {
@@ -194,9 +212,10 @@ li {
 #progress-bar {
   position: fixed;
   top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
+  right: 0;
+  left: auto;
+  height: 0;
+  width: 5px;
   background-color: white;
   background-size: cover;
   background-attachment: fixed;
@@ -357,6 +376,7 @@ footer h1 {
   background-attachment: fixed;
   background-size: cover;
   padding-top: 4vw;
+  padding-bottom: 8vw;
 }
 
 .section3 img.fade-in-image {
@@ -368,6 +388,16 @@ footer h1 {
   margin-right: 1vw;
 }
 
+.section3lists {
+  display: flex;
+  gap: 4vw;
+  padding: 2vw 0;
+}
+
+.section3list {
+  display: flex;
+  flex-direction: column;
+}
 
 .websitebox {
   position: relative;
@@ -458,7 +488,7 @@ footer h1 {
 }
 
 .section4 {
-  background-image: url(socialmediabackground.jpg);
+  background-image: url(background14.jpg);
   background-attachment: fixed;
   background-size: cover;
   padding-top: 6vw;
